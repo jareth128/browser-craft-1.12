@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8fb9ba" />
+    <title>Browser Craft 1.12</title>
+  </head>
+  <body>
+    <main id="game" aria-label="Browser Craft game">
+      <div id="world" aria-hidden="true"></div>
+      <div class="world-wash" aria-hidden="true"></div>
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Browser Craft home"><span class="mark">B</span><span>BROWSER <b>CRAFT</b></span></a>
+        <div class="world-meta"><span class="live-dot"></span><span>NEW WORLD</span><i></i><span id="coordinates">0, 0</span></div>
+        <button class="icon-button pause-button" id="pause-button" aria-label="Pause game" title="Pause (Escape)"><span>Ⅱ</span></button>
+      </header>
+      <div class="side-label">SURVIVAL <span>·</span> DAY 01</div>
+      <div class="crosshair" aria-hidden="true"><i></i><i></i></div>
+      <div class="target-label" id="target-label" aria-live="polite"></div>
+      <div class="status-panel">
+        <div class="status-heading"><span>VITALS</span><span class="status-mode">SURVIVAL</span></div>
+        <div class="health-row" aria-label="Health: 10 hearts" id="health-row"></div>
+        <div class="status-divider"></div>
+        <div class="status-line"><span class="status-icon hunger-icon">◆</span><span>HUNGER</span><div class="meter"><i style="width: 84%"></i></div><b>84</b></div>
+        <div class="status-line"><span class="status-icon level-icon">⌁</span><span>EXPERIENCE</span><div class="meter xp-meter"><i style="width: 18%"></i></div><b>03</b></div>
+      </div>
+      <div class="bottom-ui">
+        <div class="hotbar-wrap"><div class="hotbar" id="hotbar" aria-label="Hotbar"></div><div class="level-badge">3</div></div>
+        <div class="action-hint"><span>Q</span> MINE <span class="hint-gap">R</span> PLACE</div>
+      </div>
+      <div class="toast" id="toast" role="status"></div>
+      <section class="overlay hidden" id="pause-menu" aria-label="Pause menu">
+        <div class="menu-panel">
+          <div class="menu-eyebrow"><span class="live-dot"></span> WORLD PAUSED</div>
+          <h1>Take a<br /><em>breather.</em></h1>
+          <p>Your little corner of the world will be right here.</p>
+          <button class="primary-button" id="resume-button">Back to game <span>↗</span></button>
+          <button class="menu-link" id="inventory-button">Open inventory <kbd>E</kbd></button>
+          <button class="menu-link" id="save-button">Save world <kbd>↵</kbd></button>
+          <div class="menu-footer">BROWSER CRAFT <span>BUILD 1.12.0</span></div>
+        </div>
+      </section>
+      <section class="overlay hidden" id="inventory-screen" aria-label="Inventory">
+        <div class="inventory-panel">
+          <div class="inventory-head"><div><span class="menu-eyebrow">YOUR BELONGINGS</span><h2>Inventory</h2></div><button class="icon-button close-button" data-close aria-label="Close inventory">×</button></div>
+          <div class="inventory-content"><div class="inventory-grid" id="inventory-grid"></div><div class="inventory-side"><div class="avatar-preview"><div class="avatar-sun"></div><span>EXPLORER<br />SINCE DAY ONE</span></div><div class="crafting-title">CRAFTING <span>2 × 2</span></div><div class="crafting-grid"><div></div><div></div><div></div><div></div><span>→</span><div class="craft-output">✦</div></div></div></div>
+          <div class="inventory-footer"><span>Drag items to rearrange</span><span><kbd>E</kbd> or <kbd>ESC</kbd> to close</span></div>
+        </div>
+      </section>
+      <section class="overlay hidden" id="chat-screen" aria-label="Chat"><div class="chat-panel"><div class="menu-eyebrow">WORLD CHAT</div><div class="chat-log" id="chat-log">Welcome to your new world.</div><input id="chat-input" type="text" placeholder="Say something..." autocomplete="off" /></div></section>
+      <footer class="version-label">BROWSER CRAFT <span>1.12</span></footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
